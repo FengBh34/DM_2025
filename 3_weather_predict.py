@@ -22,7 +22,7 @@ if torch.cuda.is_available():
     torch.cuda.manual_seed_all(42)
 
 CONFIG = {
-    "file_path": "Desktop/DM_2025_Dataset/weather.csv",
+    "file_path": "weather.csv",
     "window_size": 12, "batch_size": 64, "hidden_dim": 128, "epochs": 40,
     "lr": 0.001, "weight_decay": 1e-4, "corr_threshold": 0.3, "train_ratio": 0.8, "loss_alpha": 0.7
 }
@@ -269,4 +269,5 @@ if __name__ == "__main__":
         'error': y_pred - y_true, 'abs_error': np.abs(y_pred - y_true)
     })
     results_df.to_csv("weather_prediction_results.csv", index=False, encoding='utf-8-sig')
+
     print(f"\n预测结果已保存到 weather_prediction_results.csv")
